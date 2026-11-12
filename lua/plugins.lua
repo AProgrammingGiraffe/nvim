@@ -157,3 +157,32 @@ vim.pack.add({
 
 require("mini.surround").setup()
 
+-- kanagawa theme
+vim.pack.add({
+    { src = "https://github.com/rebelot/kanagawa.nvim" },
+})
+
+-- Obsidian nvim
+vim.pack.add({
+    {
+        src = "https://github.com/obsidian-nvim/obsidian.nvim",
+        version = vim.version.range("*"),
+    },
+})
+
+require("obsidian").setup {
+  legacy_commands = false, -- this will be removed in 4.0.0
+  workspaces = {
+    {
+      name = "Library",
+      path = "~/Library",
+    },
+  },
+}
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.conceallevel = 2
+    end,
+})
+

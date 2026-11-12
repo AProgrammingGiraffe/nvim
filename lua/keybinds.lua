@@ -49,3 +49,31 @@ vim.keymap.set("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "Toggle
 
 -- Undo staged hunk
 vim.keymap.set("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Undo staged hunk" })
+
+
+-- obsidian nvim
+local map = vim.keymap.set
+
+map("n", "<leader>on", "<cmd>Obsidian new<CR>", {
+    desc = "New Obsidian note",
+})
+
+map("n", "<leader>os", "<cmd>Obsidian search<CR>", {
+    desc = "Search Obsidian",
+})
+
+map("n", "<leader>of", "<cmd>Obsidian quick_switch<CR>", {
+    desc = "Find Obsidian note",
+})
+
+map("n", "<leader>ob", "<cmd>Obsidian backlinks<CR>", {
+    desc = "Obsidian backlinks",
+})
+
+map("n", "<leader>ot", "<cmd>Obsidian today<CR>", {
+    desc = "Today's note",
+})
+
+map("n", "gf", "<cmd>Obsidian follow_link<CR>", {
+    desc = "Follow note link",
+})

@@ -55,9 +55,38 @@ vim.api.nvim_set_hl(0, "SpellRare", {
     sp = "#c678dd",
 })
 
+-- italic comments
+vim.api.nvim_set_hl(0, "Comment", {
+    italic = true,
+})
+vim.api.nvim_set_hl(0, "@comment", {
+    italic = true,
+})
 
+-- custom bar
+vim.opt.laststatus = 2
+vim.opt.showmode = false
 
-
+vim.opt.statusline = table.concat({
+    " ",                         -- Padding
+    "%{toupper(mode())}",        -- Current mode
+    " | ",
+    "%=",                        -- Right alignment
+    "%f",                        -- File name
+    " %m",                       -- Modified indicator
+    " | ",
+    "Ln %l, Col %c",             -- Line and column
+    " | ",
+    "%p%%",                      -- File progress
+    " ",
+})
 
 require("plugins")
 require("keybinds")
+
+-- set theme
+require("kanagawa").setup({
+    terminalColors = true,
+    commentStyle = { italic = true },
+})
+vim.cmd.colorscheme("kanagawa")
