@@ -161,6 +161,26 @@ require("mini.surround").setup()
 vim.pack.add({
     { src = "https://github.com/rebelot/kanagawa.nvim" },
 })
+require("kanagawa").setup({
+    compile = false,
+    transparent = false,
+
+    overrides = function(colors)
+        return {
+            Normal = { bg = "#24242C" },
+            NormalNC = { bg = "#24242C" },
+
+            -- Make the side bar match the background
+            SignColumn = { bg = "#24242C" },
+            LineNr = { bg = "#24242C" },
+            CursorLineNr = { bg = "#24242C" },
+            FoldColumn = { bg = "#24242C" },
+            EndOfBuffer = { bg = "#24242C" },
+        }
+    end,
+
+    theme = "wave",
+})
 
 -- Obsidian nvim
 vim.pack.add({
