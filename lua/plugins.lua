@@ -206,3 +206,9 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- flash
+vim.pack.add({
+    { src = "https://github.com/folke/flash.nvim" },
+})
+require("flash").setup({})
+
