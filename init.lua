@@ -55,14 +55,6 @@ vim.api.nvim_set_hl(0, "SpellRare", {
     sp = "#c678dd",
 })
 
--- italic comments
-vim.api.nvim_set_hl(0, "Comment", {
-    italic = true,
-})
-vim.api.nvim_set_hl(0, "@comment", {
-    italic = true,
-})
-
 -- custom bar
 vim.opt.laststatus = 2
 vim.opt.showmode = false
@@ -88,5 +80,11 @@ require("keybinds")
 require("kanagawa").setup({
     terminalColors = true,
     commentStyle = { italic = true },
+    keywordStyle = { italic = false },
 })
 vim.cmd.colorscheme("kanagawa")
+-- load config files
+require("config.blink_colors")
+require("config.gitsignscolors")
+require("config.misc_colors")
+

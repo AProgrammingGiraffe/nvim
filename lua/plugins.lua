@@ -100,6 +100,12 @@ cmp.setup({
     fuzzy = {
         implementation = "rust",
     },
+    completion = {
+    menu = {
+      scrollbar = false,
+    },
+  },
+
 })
 
 -- Lsp config
