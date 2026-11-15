@@ -18,6 +18,9 @@ vim.opt.wrap = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
+
 -- Toggle spell check
 vim.opt.spell = false
 vim.opt.spelllang = { "en" }
